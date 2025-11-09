@@ -1,4 +1,4 @@
-package pl.wsb.fitnesstracker.healthmetrics;
+package pl.wsb.fitnesstracker.healthmetrics.api;
 
 import jakarta.annotation.Nullable;
 import jakarta.persistence.*;
@@ -24,10 +24,14 @@ public class HealthMetrics {
     @ManyToOne
     @JoinColumn(name = "user_id")
     @Nullable
-    private User userId;
+    private User user;
 
+    @Column(name = "date", nullable = false)
     private LocalDate date;
+    @Column(name = "weight", nullable = false)
     private Double weight;
+    @Column(name = "height", nullable = false)
     private Double height;
+    @Column(name = "heart_rate", nullable = false)
     private Double heartRate;
 }
